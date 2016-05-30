@@ -1,0 +1,38 @@
+
+entity User{}
+
+entity BankAccount{
+	nameOnCard String required
+    address String required
+    accountNumber Long required
+     isDefault Boolean required
+    senderCity String
+    senderCountryCode String
+    senderStateCode String
+    
+}
+relationship ManyToOne {
+  BankAccount{user(login)} to User
+}
+
+
+entity Transaction{
+	ammount BigDecimal required
+    currency String required
+}
+relationship ManyToOne {
+  Transaction{reciever} to BankAccount
+}
+
+relationship ManyToOne {
+  Transaction{sender} to BankAccount
+}
+
+
+
+paginate all with pagination
+
+dto all with mapstruct
+
+service all with serviceImpl
+	

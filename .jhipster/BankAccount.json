@@ -1,0 +1,64 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "login"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "nameOnCard",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "accountNumber",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "isDefault",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "senderCity",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "senderCountryCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "senderStateCode",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160526113257",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl"
+}

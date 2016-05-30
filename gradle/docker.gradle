@@ -1,0 +1,35 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+task buildDocker(type: Exec, dependsOn: build) {
+    doFirst {
+        copy {
+            from "src/main/docker/"
+            into "build/docker/"
+            include "*"
+        }
+        copy {
+            from "build/libs"
+            into "build/docker/"
+            include "*.war*"
+        }
+        copy {
+            from "c:/visaapi/userpass.properties"
+            into "build/docker/"
+            include "*"
+        }
+        copy {
+            from "c:/visaapi/myapp_keyAndCertBundle.jks"
+            into "build/docker/"
+            include "*"
+        }
+        
+    }
+    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        commandLine 'cmd', '/c', 'docker', 'build', '-f', 'build/docker/Dockerfile', '-q', '-t', 'visahipster', 'build/docker/'
+    } else {
+        commandLine 'docker', 'build', '-f', 'build/docker/Dockerfile', '-q', '-t', 'visahipster', 'build/docker/'
+    }
+}
+
+
+

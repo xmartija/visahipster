@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="visahipsterApp.bankAccount.detail.title">Bank Account</span> {{vm.bankAccount.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="visahipsterApp.bankAccount.nameOnCard">Name On Card</span></dt>
+        <dd>
+            <span>{{vm.bankAccount.nameOnCard}}</span>
+        </dd>
+        <dt><span translate="visahipsterApp.bankAccount.address">Address</span></dt>
+        <dd>
+            <span>{{vm.bankAccount.address}}</span>
+        </dd>
+        <dt><span translate="visahipsterApp.bankAccount.accountNumber">Account Number</span></dt>
+        <dd>
+            <span>{{vm.bankAccount.accountNumber}}</span>
+        </dd>
+        <dt><span translate="visahipsterApp.bankAccount.isDefault">Is Default</span></dt>
+        <dd>
+            <span>{{vm.bankAccount.isDefault}}</span>
+        </dd>
+        <dt><span translate="visahipsterApp.bankAccount.senderCity">Sender City</span></dt>
+        <dd>
+            <span>{{vm.bankAccount.senderCity}}</span>
+        </dd>
+        <dt><span translate="visahipsterApp.bankAccount.senderCountryCode">Sender Country Code</span></dt>
+        <dd>
+            <span>{{vm.bankAccount.senderCountryCode}}</span>
+        </dd>
+        <dt><span translate="visahipsterApp.bankAccount.senderStateCode">Sender State Code</span></dt>
+        <dd>
+            <span>{{vm.bankAccount.senderStateCode}}</span>
+        </dd>
+        <dt><span translate="visahipsterApp.bankAccount.user">User</span></dt>
+        <dd>
+            {{vm.bankAccount.userLogin}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

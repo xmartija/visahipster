@@ -1,0 +1,29 @@
+{
+    "visahipsterApp": {
+        "bankAccount" : {
+            "home": {
+                "title": "Bank Accounts",
+                "createLabel": "Create a new Bank Account",
+                "createOrEditLabel": "Create or edit a Bank Account",
+                "search": "Search for Bank Account"
+            },
+            "created": "A new Bank Account is created with identifier {{ param }}",
+            "updated": "A Bank Account is updated with identifier {{ param }}",
+            "deleted": "A Bank Account is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Bank Account {{ id }}?"
+            },
+            "detail": {
+                "title": "Bank Account"
+            },
+            "nameOnCard": "Name On Card",
+            "address": "Address",
+            "accountNumber": "Account Number",
+            "isDefault": "Is Default",
+            "senderCity": "Sender City",
+            "senderCountryCode": "Sender Country Code",
+            "senderStateCode": "Sender State Code",
+            "user": "User"
+        }
+    }
+}

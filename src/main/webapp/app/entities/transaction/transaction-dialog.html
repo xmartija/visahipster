@@ -1,0 +1,66 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTransactionLabel" translate="visahipsterApp.transaction.home.createOrEditLabel">Create or edit a Transaction</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.transaction.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.transaction.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="visahipsterApp.transaction.ammount" for="field_ammount">Ammount</label>
+            <input type="number" class="form-control" name="ammount" id="field_ammount"
+                    ng-model="vm.transaction.ammount"
+                    required />
+            <div ng-show="editForm.ammount.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.ammount.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.ammount.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="visahipsterApp.transaction.currency" for="field_currency">Currency</label>
+            <input type="text" class="form-control" name="currency" id="field_currency"
+                    ng-model="vm.transaction.currency"
+                    required />
+            <div ng-show="editForm.currency.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.currency.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="visahipsterApp.transaction.reciever" for="field_reciever">Reciever</label>
+            <select class="form-control" id="field_reciever" name="reciever" ng-model="vm.transaction.recieverId" ng-options="bankAccount.id as bankAccount.id for bankAccount in vm.bankaccounts"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="visahipsterApp.transaction.sender" for="field_sender">Sender</label>
+            <select class="form-control" id="field_sender" name="sender" ng-model="vm.transaction.senderId" ng-options="bankAccount.id as bankAccount.id for bankAccount in vm.bankaccounts"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
